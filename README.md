@@ -1,20 +1,21 @@
 # Weather API
 
-## Quickstart
+## Inicio Rápido
 
-1. clone the repository:
-`git clone https://github.com/jmmarco/ajax-weather-mini-project.git`
+1. Clona el repositorio:
+`git clone https://github.com/jmmarco/weather/tree/spanish-version`
 
-2. Run a local Web Server from within the project root folder
-There are many ways to do this, a simple webserver [like this one](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en) will do the trick.
+2. Necesitas correr un sevidor web local desde la carpeta raiz del proyecto (sino la API no va a funcionar)
+Hay muchos programas y formas de correr un servidor web local en tu compu, yo recomiendo que se bajen [esta extension para el navegador Google Chrome](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en) que nos permite correr un simple servidor web desde nuestra compu con un minímo de configuración.
 
-Note: You need a Google Chrome Webrowser. Otherwise, you'll need to find another local Web Server solution.
+Importante: Esta extensión es para Google Chrome. Si no usas Google Chrome vas a tener que buscar otra forma de correr un servidor web local.
 
-3. Once the webserver is up and running navigate to `http://127.0.0.1:8887` to use the weather app.
+3. Una vez que el servidor web esta corriendo apuntar el navegador a: `http://127.0.0.1:8887` para usar la aplicación.
 
-**Note**: If you don't use a local webserver the API will not work due to [CORS](https://www.maxcdn.com/one/visual-glossary/cors/)
 
-Additional resource:
+**Importante**: Si no corres un servidor web local la aplicacion no va funcionar porque la API usa [CORS](https://www.maxcdn.com/one/visual-glossary/cors/) para protegerse de ataques de gente mala (Crackers, Piratas, Bots, etc).
 
-- [What is CORS?](https://www.maxcdn.com/one/visual-glossary/cors/)
-- [Stackoverflow: Cross origin requests are only supported for HTTP](https://stackoverflow.com/questions/20041656/xmlhttprequest-cannot-load-file-cross-origin-requests-are-only-supported-for-ht)
+Recursos adicionales:
+
+- [¿Que es CORS? (en español)](https://developer.mozilla.org/es/docs/Web/HTTP/Access_control_CORS)
+- [Stackoverflow: Cross origin requests are only supported for HTTP (en inglés)](https://stackoverflow.com/questions/20041656/xmlhttprequest-cannot-load-file-cross-origin-requests-are-only-supported-for-ht)
