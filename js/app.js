@@ -1,70 +1,81 @@
 $("#weather-form").on("submit", function(event) {
 
-  // Prevent the default behavior of the form (reload page)
+  // Prevenimos el comportamiento "por defecto" del formulario (que la página recargue)
   event.preventDefault();
 
-  // Define a couple of variables
+  // Defino un par de variables
   var city, apiKey, apiUrl, units;
 
-  // Get the current value for the city
+  // Tomo el valor de la ciudad
   city = $("#city").val();
 
 
-  // Set the API Key (this should be private)
-  apiKey = "0e9a952df087f4f3582c374303cf7e7e";
+  // Uso la API Key que me dio OpenWeatherMap (tenes que registrarte para que te asignen una)
+  apiKey = "TU-API-KEY-VA-ACA";
 
-  // Set the default units for the API (metric/imperial)
+  // Configurar el tipo de unidad a usar (metric/imperial) == (Celsius / Farenheit)
   units = "&units=metric";
 
-  // Set the API URL
+  /*
+  Armo la URL con lo que necesito (ver los API DOCS de OpenWeather MAP):
+  Documentación: http://openweathermap.org/current
+  */
+
   apiUrl = "http://api.openweathermap.org/data/2.5/weather?" + "q=" + city + "&APPID=" + apiKey + units;
 
+  /*
+  Crear la llamada AJAX para que podamos acceder a la API
+  Documentación: http://api.jquery.com/jquery.ajax/
+  */
 
-  // Debugging tip: Comment out one of variables above and test the app to see what happens
-
-  // Make the AJAX call to the API using jQuery
   $.ajax({
 
-      url: apiUrl,
-      method: "GET",
+    // uso la URL que defini anteriormente y uso el método "GET"
+    url: apiUrl,
+    method: "GET",
 
-    })
-    // If all goes well
-    .done(function(response) {
 
-      var climate = response.main;
+    /*
+    Si todo sale bien (todo lo que esta adentro de ".done" es lo que sucede cuando
+    llegamos con exito a la API)
+    */
 
-      // Take a look at the console to see how the API response looks like
-      console.log(climate);
+  }).done(function(response) {
 
-      // Store each item from the API into a variable
-      var temp = climate.temp;
-      var minTemp = climate.temp_min;
-      var maxTemp = climate.temp_max;
-      var humidity = climate.humidity;
+    // Guardo la respuesta de la API en una variable
+    var climate = response.main;
 
-      // Clear the DOM first
-      $("#location").empty();
-      $("span").empty();
+    // Tiro el resultado a la consola (investiga y fijate como se ve)
+    console.log(climate);
 
-      // Append the stuff to the DOM
-      $("#c-temp").append(temp).append("°");
-      $("#c-hum").append(humidity).append("%");
-      $("#min-temp").append(minTemp).append("°");
-      $("#max-temp").append(maxTemp).append("°");
+    // Guardo lo que necesito en cada variable
+    var temp = climate.temp;
+    var minTemp = climate.temp_min;
+    var maxTemp = climate.temp_max;
+    var humidity = climate.humidity;
 
-      // Apend the city name to the section title
-      $("#location").append(city);
-    })
-    // If something goes wrong
-    .fail(function(response) {
+    // Limpio el DOM (util para buscar otra ciudad)
+    $("#location").empty();
+    $("span").empty();
 
-      // Create a human readable error message and display it on the page
-      var error = '<span class="error">Sorry, something went wrong. Check the JS console for details.';
-      $(".weather").append(error);
+    // Agrego el resultado al DOM
+    $("#c-temp").append(temp).append("°");
+    $("#c-hum").append(humidity).append("%");
+    $("#min-temp").append(minTemp).append("°");
+    $("#max-temp").append(maxTemp).append("°");
 
-      // Output specific error to the JS console
-      console.log(response);
-    });
+    // Agrego la ciudad para que el usuario la vea
+    $("#location").append(city);
+
+  }).fail(function(response) {
+
+    // Creo un mensaje de error amigable para mostrarle al usuario
+    var error = '<span class="error">Sorry, something went wrong. Check the JS console for details.';
+    $(".weather").append(error);
+
+    // Tiro el output de error que me da la API a la consola asi veo que pasó (investigar)
+    console.log(response);
+
+  }); // Fin de .ajax
 
 });

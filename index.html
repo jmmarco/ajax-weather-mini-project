@@ -8,32 +8,43 @@
 </head>
 
 <body>
+
   <div class="container">
+
     <h1><a href="http://openweathermap.org/current">Open Weather API</a></h1>
+
     <div class="row">
+
       <form id="weather-form">
-        <label for="city">Enter your city:</label>
+        <label for="city">Que ciudad?:</label>
         <input type="text" id="city">
-        <button>Show me the current weather</button>
+        <button>Mostrame el clima!</button>
       </form>
-      <h2>Current weather for: <span id="location"></span></h2>
+
+      <h2>Clima actual para: <span id="location"></span></h2>
+
       <div class="weather">
         <ul>
-          <li>Current Temperature: <span id="c-temp"></span></li>
-          <li>Current Humidity: <span id="c-hum"></span></li>
-          <li>Minimum Temperature today: <span id="min-temp"></span></li>
-          <li>Maximum Temperature today: <span id="max-temp"></span></li>
+          <li>Temperatura: <span id="c-temp"></span></li>
+          <li>Humedad: <span id="c-hum"></span></li>
+          <li>Maxima Temperatura para hoy: <span id="min-temp"></span></li>
+          <li>Minima Temperatura para hoy: <span id="max-temp"></span></li>
         </ul>
       </div>
+
     </div>
+
     <footer>
-      <p>Weather information provided by:</p>
+      <p>Informacion meteorológica provista por:</p>
       <a href="http://openweathermap.org/api" target="_blank"><img src="images/logo_OpenWeatherMap_orange.svg" alt="OpenWeatherMap Logo"></a>
     </footer>
-  </div>
-  <!-- After the DOM is loaded, load necessary scripts -->
+
+  </div> <!-- fin de .container -->
+
+  <!-- Despues de que carga el DOM, cargamos los demas scripts -->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/app.js"></script>
+
 </body>
 
 </html>
