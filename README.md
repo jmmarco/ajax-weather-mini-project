@@ -3,7 +3,7 @@
 ## Quickstart
 
 1. clone the repository:
-`git clone https://github.com/jmmarco/ajax-weather-mini-project.git`
+`git clone https://github.com/jmmarco/weather.git`
 
 2. Run a local Web Server from within the project root folder
 There are many ways to do this, a simple webserver [like this one](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en) will do the trick.
