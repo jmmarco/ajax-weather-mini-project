@@ -12,7 +12,7 @@ form.addEventListener("submit", function (event) {
   city = document.getElementById("city").value
 
   // Set the API Key (this should be private)
-  // apiKey = "0e9a952df087f4f3582c374303cf7e7e";
+  apiKey = "0e9a952df087f4f3582c374303cf7e7e";
 
   // Set the default units for the API (metric/imperial)
   units = "&units=metric";
