@@ -11,7 +11,7 @@ $("#weather-form").on("submit", function(event) {
 
 
   // Set the API Key (this should be private)
-  apiKey = "0e9a952df087f4f3582c374303cf7e7e";
+  // apiKey = "0e9a952df087f4f3582c374303cf7e7e";
 
   // Set the default units for the API (metric/imperial)
   units = "&units=metric";
@@ -60,11 +60,13 @@ $("#weather-form").on("submit", function(event) {
     .fail(function(response) {
 
       // Create a human readable error message and display it on the page
-      var error = '<span class="error">Sorry, something went wrong. Check the JS console for details.';
+      var error = '<span class="error">Sorry, something went wrong. Check the JS console for details.</span>';
       $(".weather").append(error);
 
       // Output specific error to the JS console
-      console.log(response);
+      var errorDetails = JSON.parse(response.responseText);
+      console.log(errorDetails.message);
+
     });
 
 });
