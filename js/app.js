@@ -70,7 +70,7 @@ $("#weather-form").on("submit", function(event) {
   }).fail(function(response) {
 
     // Creo un mensaje de error amigable para mostrarle al usuario
-    var error = '<span class="error">Sorry, something went wrong. Check the JS console for details.';
+    var error = '<span class="error">Sorry, something went wrong. Check the JS console for details.</span>';
     $(".weather").append(error);
 
     // Tiro el output de error que me da la API a la consola asi veo que pasó (investigar)
