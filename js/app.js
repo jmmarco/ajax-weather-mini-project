@@ -17,7 +17,7 @@ $("#weather-form").on("submit", function(event) {
   units = "&units=metric";
 
   // Set the API URL
-  apiUrl = "http://api.openweathermap.org/data/2.5/weather?" + "q=" + city + "&APPID=" + apiKey + units;
+  apiUrl = "https://api.openweathermap.org/data/2.5/weather?" + "q=" + city + "&APPID=" + apiKey + units;
 
 
   // Debugging tip: Comment out one of variables above and test the app to see what happens
